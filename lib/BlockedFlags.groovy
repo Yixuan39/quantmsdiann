@@ -71,6 +71,9 @@ class BlockedFlags {
             '--min-pr-charge', '--max-pr-charge', '--var-mods',
             '--min-pr-mz', '--max-pr-mz', '--min-fr-mz', '--max-fr-mz',
             '--met-excision', '--light-models',
+            '--quant-tims-sum', '--im-window', '--channel-run-norm', '--channel-spec-norm',
+            // Pipeline-managed: Enterprise Knowledge Base, gated by params.enable_kb
+            '--kb',
             // These would predict a library from the whole FASTA before the pre-search
             '--fasta-search', '--predictor', '--use-quant',
         ],

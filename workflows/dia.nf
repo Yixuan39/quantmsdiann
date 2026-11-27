@@ -54,6 +54,10 @@ workflow DIA {
     if (params.enable_infin_dia && (params.speclib || params.enable_fine_tuning)) {
         error("--enable_infin_dia cannot be combined with --speclib or --enable_fine_tuning.")
     }
+    // InfinDIA (--pre-search) requires positive fixed mass accuracies when SDRF lacks ppm tolerances
+    if (params.enable_infin_dia && (((params.mass_acc_ms1 ?: 0) as Double) <= 0 || ((params.mass_acc_ms2 ?: 0) as Double) <= 0)) {
+        error("InfinDIA requires positive fixed --mass_acc_ms1 and --mass_acc_ms2 fallback tolerances (got MS1=${params.mass_acc_ms1}, MS2=${params.mass_acc_ms2}).")
+    }
 
     // Version guard for scoring mode
     if (params.scoring_mode == 'proteoforms' && VersionUtils.versionLessThan(params.diann_version, '2.0')) {

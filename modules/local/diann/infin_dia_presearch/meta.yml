@@ -18,13 +18,16 @@ input:
       type: file
       description: FASTA sequence database
       pattern: "*.{fasta,fa}"
-  - cfg:
+  - diann_config:
       type: file
-      description: specifies a configuration file to load options/commands from.
+      description: Configuration file generated from SDRF containing DIA-NN CLI flags
       pattern: "*.cfg"
   - is_dda:
       type: boolean
       description: Whether DDA mode is enabled (auto-detected from SDRF or set via --dda)
+  - diann_license:
+      type: file
+      description: Optional DIA-NN Enterprise license key file (pass [] when not used)
 output:
   - library:
       type: file
@@ -38,3 +41,5 @@ output:
       type: file
       description: File containing software version
       pattern: "versions.yml"
+authors:
+  - "@Yixuan39"

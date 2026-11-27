@@ -612,13 +612,13 @@
                 },
                 "enable_infin_dia": {
                     "type": "boolean",
-                    "description": "Enable InfinDIA for ultra-large search spaces (DIA-NN >= 2.3.0). Experimental.",
+                    "description": "Enable InfinDIA for ultra-large search spaces: an InfinDIA pre-search (--pre-search) of the MS files replaces in-silico library prediction (DIA-NN >= 2.3.0). Cannot be combined with --speclib or --enable_fine_tuning. Experimental.",
                     "fa_icon": "fas fa-infinity",
                     "default": false
                 },
                 "pre_select": {
                     "type": "integer",
-                    "description": "Set --pre-select N precursor limit for InfinDIA pre-search.",
+                    "description": "Target precursor count (--pre-select N) for the InfinDIA pre-search.",
                     "fa_icon": "fas fa-filter"
                 },
                 "save_speclib_tsv": {
